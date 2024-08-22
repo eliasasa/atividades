@@ -8,7 +8,7 @@ def segredo():
     global looping
     if not looping:
         looping = True
-        mudar_cor(0)  # Começa o loop de cores
+        mudar_cor(0)
     else:
         looping = False
 

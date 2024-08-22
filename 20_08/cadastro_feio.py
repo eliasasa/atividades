@@ -1,5 +1,6 @@
 import tkinter as tk
 
+
 def conf():
     x=sene.get()
     y=sene2.get()
