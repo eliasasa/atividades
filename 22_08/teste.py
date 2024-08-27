@@ -1,9 +1,11 @@
 import tkinter as tk
 
-janela = tk.Tk()
-janela.geometry('500x600')
-janela.config(bg='#451952')
+# Inicializar o Tkinter
+root = tk.Tk()
 
+# Listar fontes disponíveis
+fonts = tk.font.families()
+for font in fonts:
+    print(font)
 
-
-janela.mainloop()
+root.destroy()
