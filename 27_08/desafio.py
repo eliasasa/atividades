@@ -2,17 +2,15 @@ import customtkinter as ctk
 import tkinter as tk
 from PIL import Image, ImageTk
 
-# Cria a janela principal
 app = ctk.CTk()
 app.geometry(f"{app.winfo_screenwidth()}x{app.winfo_screenheight()}+0+0")
-
-
 app.configure(fg_color='black')
 
 imagem1_global = None
 imagem3_global = None
 
 def comparaçoes():
+    global x
     x = usere1.get()
     y = senhere1.get()
     z = senhere2.get()
@@ -50,6 +48,17 @@ def limpar_tudo():
         widget.destroy()
     cardapio()
 
+def limpar_tudoE(event):
+    for widget in app.winfo_children():
+        widget.destroy()
+    cardapio()
+
+def limpar_cardapio(event):
+    for widget in app.winfo_children():
+        if widget != imagem3_global:
+            widget.destroy()
+    comidas()
+
 def abrir_nova_pagina():
     frame_cadastro.place_forget()
     nova_pagina = ctk.CTkFrame(app, width=600, height=600, corner_radius=10, fg_color='#333333')
@@ -61,47 +70,126 @@ def abrir_nova_pagina():
     botao_voltar = ctk.CTkButton(nova_pagina, text="Fazer compras", command=limpar_tudo, font=('Century Gothic', 18, 'bold'), fg_color='#555555', text_color='white')
     botao_voltar.pack(padx=20, pady=20, anchor="s")
 
+def bt_buy(nmframe):
+    lb_qt = ctk.CTkLabel(nmframe, text='4', font=('Arial', 36, 'bold'), bg_color='white', text_color='black', width=300, height=50)
+    lb_qt.place(relx=0.5, rely=0.9, anchor='center')
+    add_but = ctk.CTkButton(nmframe, text='+', font=('Arial', 36, 'bold'), width=50, height=50)
+    add_but.place(relx=1, rely=0.9, anchor='e')
+    rmv_but = ctk.CTkButton(nmframe, text='-', font=('Arial', 36, 'bold'), width=50, height=50)
+    rmv_but.place(relx=0.0, rely=0.9, anchor='w')
+
+def comidas():
+
+    
+    hello = ctk.CTkLabel(app, text='Jantares ', font=('Monotype Corsiva', 60), text_color='white')
+    hello.place(relx=0.1, rely=0.04)
+
+    backimg = Image.open('27_08/icons/back-10.png')
+    backimg = backimg.resize((50, 50))
+    backimg = ImageTk.PhotoImage(backimg)
+    backl = ctk.CTkLabel(app, image=backimg, text='')
+    backl.bind("<Button-1>", command=limpar_tudoE)
+    backl.place(relx=0.05, rely=0.065)
+
+    frame1 = ctk.CTkFrame(app, width=350, height=245, corner_radius=10, fg_color='gray')
+    frame1.grid(row=1, column=0, padx=5, pady=(5,3)) 
+    icon1 = Image.open('27_08/comidas/janta/banana.jpg')
+    icon1 = ImageTk.PhotoImage(icon1)
+    iconl = ctk.CTkLabel(frame1, image=icon1, text='Hot-Nana - R$ 10,00\n\n\n\n', font=('Arial', 30, 'bold'), text_color='black')
+    iconl.place(relx=0.5, rely=0.4, anchor='center')
+    bt_buy(frame1)
+
+    frame2 = ctk.CTkFrame(app, width=350, height=245, corner_radius=10, fg_color='gray')
+    frame2.grid(row=1, column=1, padx=5, pady=5)
+    icon2 = Image.open('27_08/comidas/janta/mumia.jpg')
+    icon2 = ImageTk.PhotoImage(icon2)
+    iconl2 = ctk.CTkLabel(frame2, image=icon2, text='')
+    iconl2.place(relx=0.5, rely=0.4, anchor='center')
+    bt_buy(frame2)
+
+    frame3 = ctk.CTkFrame(app, width=350, height=245, corner_radius=10, fg_color='gray')
+    frame3.grid(row=1, column=2, padx=5, pady=(3,5))
+    icon3 = Image.open('27_08/comidas/janta/fred.png')
+    icon3 = ImageTk.PhotoImage(icon3)
+    iconl2 = ctk.CTkLabel(frame3, image=icon3, text='')
+    iconl2.place(relx=0.5, rely=0.4, anchor='center')
+    bt_buy(frame3)
+
+    frame4 = ctk.CTkFrame(app, width=350, height=245, corner_radius=10, fg_color='gray')
+    frame4.grid(row=2, column=0, padx=5, pady=1)
+    icon3 = Image.open('27_08/comidas/janta/sushi.jpg')
+    icon3 = ImageTk.PhotoImage(icon3)
+    iconl2 = ctk.CTkLabel(frame4, image=icon3, text='')
+    iconl2.place(relx=0.5, rely=0.4, anchor='center')
+    bt_buy(frame4)
+
+    frame5 = ctk.CTkFrame(app, width=350, height=245, corner_radius=10, fg_color='gray')
+    frame5.grid(row=2, column=1, padx=5, pady=1)
+    icon3 = Image.open('27_08/comidas/janta/sobras.jpg')
+    icon3 = ImageTk.PhotoImage(icon3)
+    iconl2 = ctk.CTkLabel(frame5, image=icon3, text='')
+    iconl2.place(relx=0.5, rely=0.4, anchor='center')
+    bt_buy(frame5)
+
+    frame6 = ctk.CTkFrame(app, width=350, height=245, corner_radius=10, fg_color='gray')
+    frame6.grid(row=2, column=2, padx=5, pady=1)
+    icon3 = Image.open('27_08/comidas/janta/boa.jpg')
+    icon3 = ImageTk.PhotoImage(icon3)
+    iconl2 = ctk.CTkLabel(frame6, image=icon3, text='')
+    iconl2.place(relx=0.5, rely=0.4, anchor='center')
+    bt_buy(frame6)
+
 def cardapio():
     global imagem3_global
-    
-    image_path3 = '27_08/rr.jpg'
+
+    image_path3 = '27_08/fundo.jpg'
     image3 = Image.open(image_path3)
-    image3 = ImageTk.PhotoImage(image3)
-    imagem3_global = ctk.CTkLabel(app, image=image3, text='')
+    screen_width = app.winfo_screenwidth()
+    screen_height = app.winfo_screenheight()
+    max_width = int(screen_width)
+    max_height = int(screen_height)
+    
+    image3.thumbnail((max_width, max_height))
+    image3_tk = ImageTk.PhotoImage(image3)
+    
+    imagem3_global = ctk.CTkLabel(app, image=image3_tk, text='')
     imagem3_global.place(relx=0.5, rely=0.5, anchor='center')
-    imagem3_global.image = image3
+    imagem3_global.image = image3_tk
 
     app.grid_columnconfigure(0, weight=1)
     app.grid_columnconfigure(1, weight=1)
     app.grid_columnconfigure(2, weight=1)
-    app.grid_columnconfigure(3, weight=1)
-    app.grid_columnconfigure(4, weight=1)
-    app.grid_columnconfigure(5, weight=1)
-    app.grid_columnconfigure(6, weight=1)
 
     app.grid_rowconfigure(0, weight=1)
     app.grid_rowconfigure(1, weight=1)
+    app.grid_rowconfigure(2, weight=1)
 
+    hello = ctk.CTkLabel(app, text=f'Olá {x} ', font=('Monotype Corsiva', 60), text_color='white')
+    hello.place(relx=0.04, rely=0.04)
 
-    label1 = ctk.CTkLabel(app, image=tk_image2, text='')
-    label1.grid(row=0, column=1, padx=50, pady=10)
+    frame1 = ctk.CTkFrame(app, width=350, height=250, corner_radius=10, fg_color='gray')
+    frame1.grid(row=1, column=0, padx=5, pady=(5,3)) 
+    icon1 = Image.open('27_08/icons/comida2.png')
+    icon1 = ImageTk.PhotoImage(icon1)
+    iconl = ctk.CTkLabel(frame1, image=icon1, text='JANTARES', font=('Arial', 45, 'bold'))
+    iconl.place(relx=0.5, rely=0.5, anchor='center')
+    iconl.bind("<Button-1>", limpar_cardapio)
 
-    label2 = ctk.CTkLabel(app, image=tk_image2, text='')
-    label2.grid(row=0, column=3, padx=10, pady=10)
+    frame2 = ctk.CTkFrame(app, width=350, height=250, corner_radius=10, fg_color='gray')
+    frame2.grid(row=1, column=1, padx=5, pady=5)
+    icon2 = Image.open('27_08/icons/hugeicons--drink.png')
+    icon2 = ImageTk.PhotoImage(icon2)
+    iconl2 = ctk.CTkLabel(frame2, image=icon2, text='')
+    iconl2.place(relx=0.5, rely=0.5, anchor='center')
 
-    label3 = ctk.CTkLabel(app, image=tk_image2, text='')
-    label3.grid(row=0, column=5, padx=10, pady=10)
+    frame3 = ctk.CTkFrame(app, width=350, height=250, corner_radius=10, fg_color='gray')
+    frame3.grid(row=1, column=2, padx=5, pady=(3,5))
+    icon3 = Image.open('27_08/icons/mdi--candy.png')
+    icon3 = ImageTk.PhotoImage(icon3)
+    iconl2 = ctk.CTkLabel(frame3, image=icon3, text='')
+    iconl2.place(relx=0.5, rely=0.5, anchor='center')
 
-    label4 = ctk.CTkLabel(app, image=tk_image2, text='')
-    label4.grid(row=1, column=1, padx=10, pady=10)
-
-    label5 = ctk.CTkLabel(app, image=tk_image2, text='')
-    label5.grid(row=1, column=3, padx=10, pady=10)
-    
-    label6 = ctk.CTkLabel(app, image=tk_image2, text='')
-    label6.grid(row=1, column=5, padx=10, pady=10)
-
-titulo = ctk.CTkLabel(app, text="Le Gourmet d'Éderson", font=('Monotype Corsiva', 60), text_color='white', fg_color='black')
+titulo = ctk.CTkLabel(app, text="Le Gourmet d'Éderson ", font=('Monotype Corsiva', 60), text_color='white', fg_color='black')
 titulo.pack(padx=30, pady=(25, 0), anchor="w")
 
 app.update_idletasks()
@@ -115,7 +203,6 @@ tk_image2 = ImageTk.PhotoImage(image2)
 imagem2 = tk.Label(app, image=tk_image2, bg='black')
 imagem2.place(relx=0.958, rely=0.0, anchor='ne')
 
-# vinho
 image_path = "27_08/vinho massa.jpg"
 image = Image.open(image_path)
 max_width = int(app.winfo_screenwidth() * 0.9)
@@ -155,7 +242,5 @@ show_but.place(relx=0.947, rely=0.73, anchor='ne')
 
 cad_but = ctk.CTkButton(frame_cadastro, width=40, height=40, text='Cadastrar', font=('Century Gothic', 24, 'bold'), command=comparaçoes, fg_color='#555555', text_color='white')
 cad_but.pack(padx=0, pady=(10, 40))
-
-
 
 app.mainloop()
