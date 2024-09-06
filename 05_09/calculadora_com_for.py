@@ -32,7 +32,7 @@ botoes = [
 botoes_dic={}
 
 def get_text(texto):
-    print(f'Texto do botão clicado: {texto}')
+    print(texto)
 
 row_index = 0
 for row in botoes:
