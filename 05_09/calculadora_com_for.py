@@ -47,7 +47,7 @@ for row in botoes:
         botoes_dic[nome].grid(row=row_index + 1, column=collumn_index, padx=2, pady=2, sticky='nsew')
         if text == '=':
             botoes_dic[nome].configure(fg_color=but_red, hover_color = but_red_hov)
-        elif text == '7' or text == '8' or text == '9' or text == '4' or text == '5' or text == '6' or text == '1' or text == '2' or text == '3' or text == '4' or text == '+/-' or text == '0' or text == ',':
+        elif row_index >= 2 and collumn_index <=2:
             botoes_dic[nome].configure(fg_color = but_numpad, hover_color = but_cor)    
         collumn_index += 1
 
