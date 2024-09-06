@@ -31,17 +31,18 @@ botoes = [
 
 botoes_dic={}
 
+def get_text(texto):
+    print(f'Texto do botão clicado: {texto}')
+
 row_index = 0
 for row in botoes:
     collumn_index = 0
     for text in row:
         nome = f'{text}_but'
-        botoes_dic[nome]= ctk.CTkButton(app, text=text, height=50, width=70, font=('Segoe UI', 20), fg_color=but_cor, hover_color=but_hov, text_color=text_cor)
+        botoes_dic[nome]= ctk.CTkButton(app, text=text, height=50, width=70, font=('Segoe UI', 20), fg_color=but_cor, hover_color=but_hov, text_color=text_cor, command=lambda t=text: get_text(t))
         botoes_dic[nome].grid(row=row_index + 1, column=collumn_index, padx=2, pady=2, sticky='nsew')
         collumn_index += 1
     row_index += 1
 
-for i in (botoes_dic):
-    print(i, '\n')
 
 app.mainloop()
