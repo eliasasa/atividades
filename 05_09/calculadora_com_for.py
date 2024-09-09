@@ -20,13 +20,13 @@ but_red_hov = '#e88c93'
 but_numpad = '#3b3b3b'
 #num pad hover = cor dos botoes normais, botoes normais = cor do num pad
 
-resp_frm = ctk.CTkFrame(app, height=175, fg_color='#333333')
+resp_frm = ctk.CTkFrame(app, height=175, fg_color='#1E1E1E')
 resp_frm.grid(row=0, column=0, columnspan=4, sticky='new', pady=0, padx=3)
 
 #isso é ridiculo wtf
 botoes = [
     ('%', 'CE', 'C', '⌫'),
-    ('1/x', 'x²', '²√x', '÷'),
+    ('¹/ₓ', 'x²', '²√x', '÷'),
     ('7', '8', '9', 'x'),
     ('4', '5', '6', '-'),
     ('1', '2', '3', '+'),
