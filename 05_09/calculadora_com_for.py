@@ -4,35 +4,25 @@ app = ctk.CTk()
 app.geometry('300x500')
 app.configure(fg_color='#1E1E1E')
 app.title('Calculadora')
+
 app.columnconfigure(0, weight=1)
 app.columnconfigure(3, weight=1)
-<<<<<<< HEAD
+
 app.rowconfigure(0, weight=0)
-=======
 app.rowconfigure(0, weight=1)
->>>>>>> 45f9014c71cdfc84b089cf7800254c5112da81b9
 app.rowconfigure(5, weight=0)
 
+but_cor = '#333333'
 but_cor = '#323232'
 but_hov = '#4D4D4D' 
 text_cor = '#FFFFFF'
 but_red = '#ff99a1'
 but_red_hov = '#e88c93'
 but_numpad = '#3b3b3b'
-<<<<<<< HEAD
-#num pad hover = cor dos botoes normais, botoes normais = cor do num pad
 
-resp_frm = ctk.CTkFrame(app, height=175, fg_color='#333333')
+
+resp_frm = ctk.CTkFrame(app, height=175, fg_color='#1E1E1E')
 resp_frm.grid(row=0, column=0, columnspan=4, sticky='new', pady=0, padx=3)
-
-    
-        
-  
-#isso é ridiculo wtf
-=======
-
-
-resp_frm = ctk.CTkFrame(app, height=175, fg_color='#333333')
 resp_frm.grid(row=0, column=0, columnspan=4, sticky='nsew', pady=3, padx=2)
 resp_frm.columnconfigure(0, weight=1)
 resp_frm.rowconfigure(0, weight=1)
@@ -47,7 +37,7 @@ def ajuste_font():
         font_size = max(30, 60 - (len(x) - 8) * 5)
     result_lbl.configure(font=('Segoe UI', font_size))
 
->>>>>>> 45f9014c71cdfc84b089cf7800254c5112da81b9
+#isso é ridiculo wtf
 botoes = [
     ('%', 'CE', 'C', '⌫'),
     ('1/x', 'x²', '²√x', '÷'),
@@ -56,15 +46,12 @@ botoes = [
     ('1', '2', '3', '+'),
     ('+/-', '0', ',', '=')
 ]
-<<<<<<< HEAD
-botoes_dic={}
-def get_text(texto):
-    print(texto)
-=======
 
+botoes_dic={}
 botoes_dic = {}
 
 def get_text(texto):
+    print(texto)
     x = result_lbl.cget('text')
     if x == '0' and texto.isdigit():
         result_lbl.configure(text=texto)
@@ -86,31 +73,20 @@ def get_text(texto):
         if x == '0' and texto in '+-*/':
             result_lbl.configure(text=texto)
         else:
-            result_lbl.configure(text=f'{x}{texto}')
+            pass
         ajuste_font()
 
-    
 
 
->>>>>>> 45f9014c71cdfc84b089cf7800254c5112da81b9
 row_index = 0
 for row in botoes:
+    collumn_index = 0
     column_index = 0
     for text in row:
         nome = f'{text}_but'
-<<<<<<< HEAD
-        botoes_dic[nome] = ctk.CTkButton(app, text=text, height=50, width=70, font=('Segoe UI', 20), fg_color=but_cor, hover_color=but_numpad, text_color=text_cor, command=lambda t=text: get_text(t))
+        botoes_dic[nome]= ctk.CTkButton(app, text=text, height=50, width=70, font=('Segoe UI', 20), fg_color=but_cor, hover_color=but_hov, text_color=text_cor, command=lambda t=text: get_text(t))
         botoes_dic[nome].grid(row=row_index + 1, column=collumn_index, padx=2, pady=2, sticky='nsew')
-        if text == '=':
-            botoes_dic[nome].configure(fg_color=but_red, hover_color = but_red_hov)
-        elif row_index >= 2 and collumn_index <=2:
-            botoes_dic[nome].configure(fg_color = but_numpad, hover_color = but_cor)    
         collumn_index += 1
-
-    row_index += 1
-
-app.mainloop()
-=======
         botoes_dic[nome] = ctk.CTkButton(app, text=text, height=50, width=73, font=('Segoe UI', 20), fg_color=but_cor, hover_color=but_numpad, text_color=text_cor, command=lambda t=text: get_text(t)) 
         botoes_dic[nome].grid(row=row_index + 1, column=column_index, padx=1, pady=1, sticky='nsew')
         if text == '=':
@@ -120,5 +96,5 @@ app.mainloop()
         column_index += 1
     row_index += 1
 
+
 app.mainloop()
->>>>>>> 45f9014c71cdfc84b089cf7800254c5112da81b9
