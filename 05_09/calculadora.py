@@ -23,11 +23,11 @@ but_hov = '#4D4D4D'
 text_cor = '#FFFFFF'
 
 resp_frm = ctk.CTkFrame(app, height=175, fg_color='#333333')
-resp_frm.grid(row=0, column=0, columnspan=4, sticky='new', pady=0, padx=3)
+resp_frm.grid(row=0, column=0, columnspan=4, sticky='new', pady=4, padx=2)
 
 def but_padrao(nome, texto, linha, coluna):
     nome = ctk.CTkButton(app, text=texto, height=50, width=95, font=('Segoe UI', 24), fg_color=but_cor, hover_color=but_hov, text_color=text_cor)
-    nome.grid(row=linha, column=coluna, padx=2, pady=2, sticky='new')
+    nome.grid(row=linha, column=coluna, padx=1, pady=1, sticky='new')
 
 but_padrao('porc_but', '%', 1, 0)
 but_padrao('ce_but', 'CE', 1, 1)
