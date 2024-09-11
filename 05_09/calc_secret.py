@@ -1,4 +1,6 @@
 import customtkinter as ctk
+from PIL import Image, ImageTk
+import os
 
 app = ctk.CTk()
 app.geometry('300x500')
@@ -50,7 +52,6 @@ botoes = [
 ]
 
 botoes_dic={}
-botoes_dic = {}
 
 global cont, somes, sub, mult, div
 cont = 0
@@ -137,6 +138,8 @@ def get_text(texto):
     elif x == '40028922':
         for widget in app.winfo_children():
             widget.destroy()
+        show_gif()
+
     elif texto in '+-x/÷':
         hist_result.configure(text=x)
         result_lbl.configure(text='0')
@@ -180,12 +183,28 @@ def get_text(texto):
             result_lbl.configure(text='Erro')
     ajuste_font()
 
+def show_gif():
+    gif_frames = [f"05_09/segredo/frame_{i:02d}_delay-0.1s.gif" for i in range(38, -1, -1)]
+    
+    gif_label = ctk.CTkLabel(app, text='')
+    gif_label.pack()
+
+    def update_frame(index):
+        if index < len(gif_frames):
+            frame = ImageTk.PhotoImage(Image.open(gif_frames[index]))
+            gif_label.configure(image=frame)
+            gif_label.image = frame
+            app.after(100, lambda: update_frame(index + 1))
+        else:
+            app.after(100, lambda: update_frame(0))
+    
+    update_frame(0)
+
 row_index = 0
 for row in botoes:
     collumn_index = 0
     column_index = 0
     for text in row:
-        global t
         nome = f'{text}_but'
         botoes_dic[nome]= ctk.CTkButton(app, text=text, height=50, width=70, font=('Segoe UI', 20), fg_color=but_cor, hover_color=but_hov, text_color=text_cor, command=lambda t=text: get_text(t))
         botoes_dic[nome].grid(row=row_index + 1, column=collumn_index, padx=2, pady=2, sticky='nsew')
