@@ -134,9 +134,6 @@ def get_text(texto):
             x = str(x)
             x = str(x.replace('.', ','))
         result_lbl.configure(text=f'{x}')
-    elif x == '40028922':
-        for widget in app.winfo_children():
-            widget.destroy()
     elif texto in '+-x/÷':
         hist_result.configure(text=x)
         result_lbl.configure(text='0')
