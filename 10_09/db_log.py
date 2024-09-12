@@ -1,3 +1,4 @@
+
 import customtkinter as ctk
 import mysql.connector as mysql
 
@@ -97,7 +98,6 @@ def logintodb (user, passw):
 
 but_log = ctk.CTkButton(frame_cad, text='Logar', fg_color='green', font=('Segoe UI', 20, 'bold'), text_color='white', height=40, width=130, command=get)
 but_log.pack(pady=(80, 0), padx=10, anchor = 's')
-
 
 
 app.mainloop()

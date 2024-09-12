@@ -184,7 +184,7 @@ def get_text(texto):
     ajuste_font()
 
 def show_gif():
-    gif_frames = [f"05_09/segredo/frame_{i:02d}_delay-0.1s.gif" for i in range(38, -1, -1)]
+    gif_frames = [f"05_09/segredo/frame_{i:02d}_delay-0.1s.gif" for i in range(38)]
     
     gif_label = ctk.CTkLabel(app, text='')
     gif_label.pack()
