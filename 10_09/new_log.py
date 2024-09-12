@@ -3,26 +3,38 @@ from PIL import Image, ImageTk
 import mysql.connector as mysql
 
 configDB = {
-    'host': '192.168.100.52',
+    'host': '10.28.2.62',
     'user': 'elias',
     'password': 'suporte',
     'database': 'logdesk'
-}
+} 
 
 db = mysql.connect(**configDB)
 cursor = db.cursor()
 
+def show_text(id):
+    search_text = f'SELECT texto FROM cadastro WHERE id_cli = {id}'
+    cursor.execute(search_text, id)
+    resultado2 = cursor.fetchall()
+    print(resultado2)
+    ctk.CTkLabel(frame_cad, text=resultado2, font=('', 30)).pack()
+
 def log_user(nome, senha):
-    search_user = 'SELECT id_cli FROM cadastro WHERE nome = %s AND senha = %s'
-    cursor.execute(search_user, (nome, senha))
-    resultado = cursor.fetchall()
+    search_user = f'SELECT id_cli FROM cadastro WHERE nome = "{nome}" AND senha = "{senha}"'
+    cursor.execute(search_user)
+    resultado = cursor.fetchone()
     print(resultado)
-    if len(resultado) == 1:
-        ttl.configure(text='rapaaaaz')
+    if len(resultado) > 0:
+        for widget in frame_cad.winfo_children():
+            widget.destroy()
+        
+    else: pass
 
 def get_info():
-    nome_user = usere.get()
-    senha_user = sen1e.get()
+    nome_user = usere.get().replace(';', '')
+    senha_user = sen1e.get().replace(';', '')
+
+
     log_user(nome_user, senha_user)
 
 app = ctk.CTk()
