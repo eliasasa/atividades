@@ -46,23 +46,23 @@ configDB = {
     'database':'logdesk'
     }
 
-db = mysql.connect(**configDB)
-cursor = db.cursor()
+# db = mysql.connect(**configDB)
+# cursor = db.cursor()
 
-def get():
-    user = usere.get()
-    passw = sen1e.get()
-    logintodb(user, passw)
+# def get():
+#     user = usere.get()
+#     passw = sen1e.get()
+#     logintodb(user, passw)
 
-def logintodb (user, passw):
-    usuario = 'select nome from cadastro'
+# def logintodb (user, passw):
+#     usuario = 'select nome from cadastro'
     
-    cursor.execute(usuario)
-    resultado = cursor.fetchall()
-    for x in resultado:
-        if x == user:
-            print('hehehe', resultado)
-        else: print('awooooo')
+#     cursor.execute(usuario)
+#     resultado = cursor.fetchall()
+#     for x in resultado:
+#         if x == user:
+#             print('hehehe', resultado)
+#         else: print('awooooo')
 
       
 
@@ -95,7 +95,7 @@ def logintodb (user, passw):
 
 
 
-but_log = ctk.CTkButton(frame_cad, text='Logar', fg_color='green', font=('Segoe UI', 20, 'bold'), text_color='white', height=40, width=130, command=get)
+but_log = ctk.CTkButton(frame_cad, text='Logar', fg_color='green', font=('Segoe UI', 20, 'bold'), text_color='white', height=40, width=130)
 but_log.pack(pady=(80, 0), padx=10, anchor = 's')
 
 
