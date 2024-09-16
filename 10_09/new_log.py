@@ -3,8 +3,8 @@ from PIL import Image, ImageTk
 import mysql.connector as mysql
 
 configDB = {
-    'host': '192.168.100.52',
-    'user': 'elias',
+    'host': '10.28.2.62',
+    'user': 'suporte',
     'password': 'suporte',
     'database': 'logdesk'
 } 
