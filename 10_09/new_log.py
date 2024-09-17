@@ -3,8 +3,8 @@ from PIL import Image, ImageTk
 import mysql.connector as mysql
 
 configDB = {
-    'host': '192.168.100.52',
-    'user': 'elias',
+    'host': '10.28.2.62',
+    'user': 'suporte',
     'password': 'suporte',
     'database': 'logdesk'
 } 
@@ -138,7 +138,7 @@ def dt_log(event):
     global Cadastro
     Cadastro = False
     frame_cad.configure(fg_color='#23272A')
-    app.configure(fg_color='#2C2F33')
+    app.configure(fg_scolor='#2C2F33')
     ttl.configure(text_color='#7289DA')
     ttl_log.configure(text='LOGIN', text_color='gray')
     but_log.configure(text='Logar', fg_color='#7289DA', hover_color='#677BC4')
