@@ -15,6 +15,8 @@ import pandas as p
 
 # pg.PAUSE = 1 # -> Tempo de 1s em todos os comandos
 
+pg.FAILSAFE = True
+
 pg.press('win') # -> Botão windows
 pg.write('opera')
 pg.press('enter')
@@ -33,19 +35,18 @@ pg.write('felipenetoreal@gmail.com')
 pg.press('tab') # -> Passa pro próximo campo
 pg.write('senha123')
 pg.press('enter')
+t.sleep(1)
+pg.press('tab')
 
 # Passo 3: Importar db
 
 prod = p.read_csv('jornada_python/aula 1 - automação/produtos.csv')
-t.sleep(1)
-pg.press('tab')
-t.sleep(1)
+
 
 # Passo 4: Cadastrar 1 produto
 # Codigo, Marca, Tipo, Categoria, Preço UNI, Custo, OBS
 
 for linha in prod.index:
-    pg.click(x=740, y=238)
     codigo = str(prod.loc[linha, 'codigo'])
     pg.write(codigo)
     pg.press('tab')
@@ -70,13 +71,14 @@ for linha in prod.index:
     pg.write(custo)
     pg.press('tab')
 
-    obs = str(prod.loc[linha, 'obs'])
+    obs = prod.loc[linha, 'obs']
     if not p.isna(obs):
-        pg.write(obs)
-    else: pass
+        pg.write(str(obs))
     pg.press('tab')
+    
     pg.press('enter')
     pg.scroll(5000)
+    pg.click(x=792, y=243)
 
 # Passo 5: Repetir o processo
 
