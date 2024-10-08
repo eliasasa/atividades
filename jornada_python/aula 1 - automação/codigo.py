@@ -8,18 +8,20 @@ import pandas as p
 # pyautogui.write # -> Escrever
 # pyautogui.click # -> Clicar
 # pyautogui.press # -> Apertar tecla
-# pyautogui.hotkey('alt', 'f4') # -> Atalhos
+# pg.hotkey('alt', 'f4') # -> Atalhos
 # pg.click(x=758, y=352, clicks = 3, button='secondary') # Clicar 3 vezes e botão direito >> ('left', 'middle', 'right', 'primary', 'secondary', 1, 2, 3)
 
-# -- Abrir navegador
+# -- Abrir navegadorfelipenetoreal@gmail.com    senha123
 
 # pg.PAUSE = 1 # -> Tempo de 1s em todos os comandos
 
 pg.FAILSAFE = True
 
-pg.press('win') # -> Botão windows
-pg.write('opera')
-pg.press('enter')
+pg.click(x=417, y=1064)
+
+# pg.press('win') # -> Botão windows
+# pg.write('edge')
+# pg.press('enter')
 
 # -- Entrar no link: https://dlp.hashtagtreinamentos.com/python/intensivao/login
 
@@ -29,7 +31,7 @@ pg.press('enter')
 
 # Passo 2: Fazer login
 
-t.sleep(1.5)
+t.sleep(1.8)
 pg.click(x=758, y=352)
 pg.write('felipenetoreal@gmail.com')
 pg.press('tab') # -> Passa pro próximo campo
