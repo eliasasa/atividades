@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Meu Currículo</title>
     <link rel="shortcut icon" href="../10_16/imagens/eye_icon.png">
+    <link rel="preload" href="../10_16/imagens/background.png" as="image">
     <style>
         body {
             background-image: url("../10_16/imagens/background.png");
@@ -11,11 +12,11 @@
             display: flex;
             justify-content: center; 
             height: 95vh; 
-            position: relative; /* Permite o uso de position: absolute nos filhos */
+            position: relative; 
         }
 
         .container {
-            background-color: lightcyan; 
+            background-color: transparent; 
             padding: 20px; 
             max-width: 1200px; 
             width: 90%;
@@ -26,7 +27,7 @@
 
         img {
             display: block;
-            margin: 10px auto; /* Isso alinha as imagens ao centro */
+            margin: 10px auto; 
         }
 
         .left {
@@ -38,16 +39,30 @@
 
         .gatinho {
             position: absolute; 
-            bottom: 200px; 
+            bottom: 20px; 
             right: 20px; 
             width: auto; 
         }
-
         .frame {
             position: absolute;
-            right: 90%;
+            top: 20px;
+            right: 50px; 
             height: 30%;
+            }
+        
+        .eu {
+            position: absolute;
+            top: 25px;
+            right: 55px; 
+            height: 28%;
         }
+        .nyan2 {
+            position: absolute;
+            bottom: 20px;
+            left: 0px; 
+            height: 28%;
+        }
+
     </style>
 </head>
 <body>
@@ -70,18 +85,33 @@
             <br>
         </div>
         <div>
-            <button>
-                Endereço
-            </button>
-            <button>
-                Certificados
-            </button>
-            <button>
-                Biografia
-            </button>
+            <a href="../10_16/dados.html">
+                <button style="font-family: 'Comic Sans MS'; font-size: 50px; padding: 10px 20px; border-radius: 15px; background-color: red; color: white;">
+                    Sobre mim
+                </button>
+            </a>
+            <a href="../10_16/certificados.html">
+                <button style="font-family: 'Comic Sans MS'; font-size: 50px; padding: 10px 20px; border-radius: 15px; background-color: red; color: white;">
+                    Certificados
+                </button>
+            </a>
+            <a>
+                <button style="font-family: 'Comic Sans MS'; font-size: 50px; padding: 10px 20px; border-radius: 15px; background-color: red; color: white;">
+                    Endereço
+                </button>
+            </a>
+            <a>
+                <button style="font-family: 'Comic Sans MS'; font-size: 50px; padding: 10px 20px; border-radius: 15px; background-color: red; color: white;">
+                    Dados
+                </button>
+            </a>
         </div>
     </div>
     <img class="gatinho" src="../10_16/imagens/gatinho.gif" alt="Gatinho" height="350"> 
-    <img class="frame" src=""
+    <div>
+        <img class='eu' src="../10_16/imagens/eu.jpg">
+        <img class="frame" src="../10_16/imagens/frame.gif">
+        <img class="nyan2" src="../10_16/imagens/nyan2.gif">
+    </div>
 </body>
 </html>
