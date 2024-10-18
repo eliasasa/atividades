@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container {
+            justify-content: center;
+            text-align: center; 
+        }
+
+        input, label{
+            font-size: 15px;
+        }
+        
+        fieldset {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="send.php">
+            <fieldset>
+                <legend style="font-size: 30px;">Dados pessoais</legend>
+                <label for="fname>Primeiro nome</label>
+                <input type="text" placeholder="Digite aqui..." required id="fname" name="fname">
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
