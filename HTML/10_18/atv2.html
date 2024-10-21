@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <h1>Cadastro de Usuário</h1>
+    <form action="send.php">
+        <label for="name">Nome Completo:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        <fieldset>
+            <legend>Qual sua linguagem preferida:</legend>
+            <input type="radio" id="html" name="fav_language" value="HTML" required checked>
+            <label for="html">HTML</label><br>
+            
+            <input type="radio" id="css" name="fav_language" value="CSS" required>
+            <label for="css">CSS</label><br>
+
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript" required>
+            <label for="javascript">JavaScript</label><br>
+        </fieldset>
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="senha">Senha:</label><br>
+        <input type="password" id="senha" name="senha" required><br><br>
+
+        <label for="num">Telefone:</label><br>
+        <input type="tel" id="num" name="num" pattern="\([0-9]{2}\) [0-9]{4}-[0-9]{4}" required placeholder="(XX) XXXX-XXXX"><br><br>        
+
+        <label for="datanasc">Data de Nascimento:</label><br>
+        <input type="date" id="datanasc" name="datanasc" required><br><br>
+
+        <label for="favcor">Cor Favorita:</label><br>
+        <input type="color" id="favcor" name="favcor" required value="#ffffff"><br><br>
+
+        <label for="age">Idade:</label><br>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="sex">Gênero:</label><br>
+        <input type="radio" id="masculino" name="sex" value="masculino" required>
+        <label for="masculino">Masculino</label><br>
+        <input type="radio" id="feminino" name="sex" value="feminino" required>
+        <label for="feminino">Feminino</label><br><br> 
+
+        <label for="time">Escolha seus times favoritos:</label><br>
+        <input type="checkbox" id="flamengo" name="time" value="flamengo">
+        <label for="flamengo">Flamengo</label><br>
+        <input type="checkbox" id="palmeiras" name="time" value="palmeiras">
+        <label for="palmeiras">Palmeiras</label><br>
+        <input type="checkbox" id="corinthians" name="time" value="corinthians">
+        <label for="corinthians">Corinthians</label><br><br>
+        
+        <label for="pais">País de Origem:</label><br>
+        <select id="pais" name="pais" required>
+            <option value="brasil" selected>Brasil</option>
+            <option value="alemanha">Alemanha</option>
+            <option value="frança">França</option>
+            <option value="argentina">Argentina</option>
+        </select><br><br>
+
+        <label for="foto">Envie sua foto de perfil:</label><br>
+        <input type="file" id="foto" name="foto"><br><br>
+
+        <label for="search">Pesquise algo:</label><br>
+        <input type="search" id="search" name="search" placeholder="Buscar..."><br><br>
+
+        <button type="submit">Cadastrar</button>
+        <button type="reset">Limpar Formulário</button>
+    </form>
+</body>
+</html>
