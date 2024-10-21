@@ -6,15 +6,21 @@
     <style>
         .container {
             justify-content: center;
-            text-align: center; 
+            text-align: left; 
         }
 
         input, label{
             font-size: 15px;
+            text-align:  left;
+            justify-content: left;
         }
         
         fieldset {
             margin: 0;
+        }
+
+        legend{
+            font-size: 30px;
         }
 
     </style>
@@ -23,10 +29,196 @@
     <div class="container">
         <form action="send.php">
             <fieldset>
-                <legend style="font-size: 30px;">Dados pessoais</legend>
-                <label for="fname>Primeiro nome</label>
-                <input type="text" placeholder="Digite aqui..." required id="fname" name="fname">
+                <legend>Dados pessoais</legend>
+                <label for="fname">Primeiro nome</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="fname" name="fname"><br><br>
+
+                <label for="mname">Nome do meio</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="mname" name="mname"><br><br>
+
+                <label for="sname">Segundo nome</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="sname" name="sname"><br><br>
+
+                <label for="nick">Apelido</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="nick" name="nick"><br><br>
+
+                <label for="soname">Nome social</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="soname" name="soname"><br><br>
             </fieldset>
+            <fieldset>
+                <legend>Endereço</legend>
+                
+                <label for="state">Estado</label><br>
+                <select id="state" name="state">
+                    <option value="ac">Acre</option>
+                    <option value="al">Alagoas</option>
+                    <option value="ap">Amapá</option>
+                    <option value="am">Amazonas</option>
+                    <option value="ba">Bahia</option>
+                    <option value="ce">Ceará</option>
+                    <option value="df">Distrito Federal</option>
+                    <option value="es">Espírito Santo</option>
+                    <option value="go">Goiás</option>
+                    <option value="ma">Maranhão</option>
+                    <option value="mt">Mato Grosso</option>
+                    <option value="ms">Mato Grosso do Sul</option>
+                    <option value="mg">Minas Gerais</option>
+                    <option value="pa">Pará</option>
+                    <option value="pb">Paraíba</option>
+                    <option value="pr">Paraná</option>
+                    <option value="pe">Pernambuco</option>
+                    <option value="pi">Piauí</option>
+                    <option value="rj">Rio de Janeiro</option>
+                    <option value="rn">Rio Grande do Norte</option>
+                    <option value="rs">Rio Grande do Sul</option>
+                    <option value="ro">Rondônia</option>
+                    <option value="rr">Roraima</option>
+                    <option value="sc">Santa Catarina</option>
+                    <option value="sp">São Paulo</option>
+                    <option value="se">Sergipe</option>
+                    <option value="to">Tocantins</option>
+                </select><br><br>
+
+                <label for="city">Cidade</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="city" name="city"><br><br>
+
+                <label for="bairro">Bairro</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="bairro" name="bairro"><br><br>
+
+                <label for="rua">Rua</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="rua" name="rua"><br><br>
+
+                <label for="num">Número</label><br>
+                <input type="number" placeholder="Digite aqui..." required id="num" name="num"><br><br>
+            </fieldset>
+            <fieldset>
+                <legend>Dados Financeiros</legend>
+            
+                <label for="income">Renda Mensal</label><br>
+                <input type="number" placeholder="Digite aqui..." required id="income" name="income" step="0.01"><br><br>
+            
+                <label for="expenses">Despesas Mensais</label><br>
+                <input type="number" placeholder="Digite aqui..." required id="expenses" name="expenses" step="0.01"><br><br>
+            
+                <label for="savings">Poupança</label><br>
+                <input type="number" placeholder="Digite aqui..." required id="savings" name="savings" step="0.01"><br><br>
+            
+                <label for="debts">Dívidas</label><br>
+                <input type="number" placeholder="Digite aqui..." required id="debts" name="debts" step="0.01"><br><br>
+            
+                <label for="investments">Investimentos</label><br>
+                <input type="number" placeholder="Digite aqui..." required id="investments" name="investments" step="0.01"><br><br>
+            </fieldset>
+            <fieldset>
+                <legend>Dados Comerciais</legend>
+            
+                <label for="businessName">Nome da Empresa</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="businessName" name="businessName"><br><br>
+            
+                <label for="businessType">Tipo de Negócio</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="businessType" name="businessType"><br><br>
+            
+                <label for="cnpj">CNPJ</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="cnpj" name="cnpj" pattern="\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}" title="Formato: 00.000.000/0000-00"><br><br>
+            
+                <label for="contact">Contato Comercial</label><br>
+                <input type="tel" placeholder="Digite aqui..." required id="contact" name="contact"><br><br>
+            
+                <label for="email">E-mail Comercial</label><br>
+                <input type="email" placeholder="Digite aqui..." required id="email" name="email"><br><br>
+            </fieldset>
+            <fieldset>
+                <legend>Cadastro de Veículo</legend>
+            
+                <label for="vehicleMake">Marca do Veículo</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="vehicleMake" name="vehicleMake"><br><br>
+            
+                <label for="vehicleModel">Modelo do Veículo</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="vehicleModel" name="vehicleModel"><br><br>
+            
+                <label for="year">Ano do Veículo</label><br>
+                <input type="number" placeholder="Digite aqui..." required id="year" name="year" min="1886" max="2024"><br><br>
+            
+                <label for="plate">Placa do Veículo</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="plate" name="plate" pattern="[A-Z]{3}-[0-9][0-9][A-Z][0-9]{2}" title="Formato: AAA-00A0"><br><br>
+            
+                <label for="vin">Número de Identificação do Veículo (VIN)</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="vin" name="vin" maxlength="17"><br><br>
+            </fieldset>
+            <fieldset>
+                <legend>Cadastro de Imóvel</legend>
+            
+                <label for="propertyType">Tipo de Imóvel</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="propertyType" name="propertyType"><br><br>
+            
+                <label for="address">Endereço do Imóvel</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="address" name="address"><br><br>
+            
+                <label for="area">Área do Imóvel (m²)</label><br>
+                <input type="number" placeholder="Digite aqui..." required id="area" name="area" min="1"><br><br>
+            
+                <label for="rooms">Número de Quartos</label><br>
+                <input type="number" placeholder="Digite aqui..." required id="rooms" name="rooms" min="0"><br><br>
+            
+                <label for="value">Valor do Imóvel</label><br>
+                <input type="number" placeholder="Digite aqui..." required id="value" name="value" step="0.01"><br><br>
+            </fieldset>                        
+            <fieldset>
+                <legend>Dados do Cônjuge</legend>
+            
+                <label for="spouseName">Nome do Cônjuge</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="spouseName" name="spouseName"><br><br>
+            
+                <label for="spouseCpf">CPF do Cônjuge</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="spouseCpf" name="spouseCpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Formato: 000.000.000-00"><br><br>
+            
+                <label for="spouseBirthdate">Data de Nascimento do Cônjuge</label><br>
+                <input type="date" placeholder="Digite aqui..." required id="spouseBirthdate" name="spouseBirthdate"><br><br>
+            
+                <label for="spouseOccupation">Profissão do Cônjuge</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="spouseOccupation" name="spouseOccupation"><br><br>
+            
+                <label for="spouseEmail">E-mail do Cônjuge</label><br>
+                <input type="email" placeholder="Digite aqui..." required id="spouseEmail" name="spouseEmail"><br><br>
+            </fieldset>
+            <fieldset>
+                <legend>Dados dos Filhos</legend>
+            
+                <label for="childName">Nome do Filho</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="childName" name="childName"><br><br>
+            
+                <label for="childBirthdate">Data de Nascimento do Filho</label><br>
+                <input type="date" placeholder="Digite aqui..." required id="childBirthdate" name="childBirthdate"><br><br>
+            
+                <label for="childCpf">CPF do Filho</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="childCpf" name="childCpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Formato: 000.000.000-00"><br><br>
+            
+                <label for="childSchool">Escola do Filho</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="childSchool" name="childSchool"><br><br>
+            
+                <label for="childGrade">Série/Ano Escolar</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="childGrade" name="childGrade"><br><br>
+            </fieldset>
+            <fieldset>
+                <legend>Formação Escolar</legend>
+            
+                <label for="educationLevel">Nível de Escolaridade</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="educationLevel" name="educationLevel"><br><br>
+            
+                <label for="schoolName">Nome da Instituição de Ensino</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="schoolName" name="schoolName"><br><br>
+            
+                <label for="graduationYear">Ano de Conclusão</label><br>
+                <input type="number" placeholder="Digite aqui..." required id="graduationYear" name="graduationYear" min="1900" max="2024"><br><br>
+            
+                <label for="fieldOfStudy">Área de Estudo</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="fieldOfStudy" name="fieldOfStudy"><br><br>
+            
+                <label for="degree">Grau Obtido</label><br>
+                <input type="text" placeholder="Digite aqui..." required id="degree" name="degree"><br><br>
+            </fieldset>
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpar formulário</button>                   
         </form>
     </div>
 </body>

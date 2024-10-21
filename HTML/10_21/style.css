@@ -1,0 +1,20 @@
+body {
+    background-color: darksalmon;
+
+}
+
+#teste {
+    color: green;
+}
+
+
+p {
+    font-family: Comic Sans MS;
+
+}
+
+.botao {
+    color: white;
+    background-color: darkgreen;
+    display: block;
+}
