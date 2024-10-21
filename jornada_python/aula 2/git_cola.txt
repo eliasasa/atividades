@@ -1,0 +1,8 @@
+$ cd "C:\Users\elias\OneDrive\Documentos\VScode\atividades"
+$ git branch >> ver a branch
+$ git checkout <nome> >> mudar branch
+$ git pull origin <nome> >> atualizar branch 
+$ git status >> checar
+$ git add . >> salvar modificações na branch
+$ git commit -m "mensagem"
+$ git push >> push to main
