@@ -1,0 +1,77 @@
+body {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh; 
+    margin: 0;
+    background: linear-gradient(to top, #24b3cf, #d4e7eb);
+    background-attachment: fixed;
+}
+
+.container {
+    box-sizing: border-box;
+    padding: 0;
+    text-align: center;
+}
+
+.tijolo {
+    background-color: transparent;
+    box-sizing: border-box; 
+    display: inline-block; 
+    border-radius: 8% 8% 0 0;
+    text-align: center;
+    margin: 0 8px; /* Margem vertical: 0, horizontal: 5px */
+    height: 500px;
+    box-shadow: 0 25px 10px rgba(0, 0, 0, 0.7);
+    
+}
+
+
+.tijolo img {
+    margin: 0;
+    padding: 0;
+    display: block; 
+    height: 500px;
+    border-radius: 8% 8% 0 0;
+}
+
+.texto {
+    display: block; 
+    background-color: pink;
+    color: black; /* Ajuste a cor do texto para melhorar a legibilidade */
+    margin: 0;
+    padding: 20px; /* Margem interna */
+    width: 100%;
+    font-size: 24px;
+    max-width: 357.5px; 
+    text-align: justify;
+    border-radius: 0 0 10% 10%;
+    box-sizing: border-box;
+    border: 2px solid black;
+    box-shadow: 0 25px 10px rgba(0, 0, 0, 0.7); /* Sombra mais forte e desfocada */
+}
+
+#t1 {
+    background-color: blue;
+    color: yellowgreen;
+}
+
+#t2 {
+    background-color: lightblue;
+    color: red;
+}
+
+#t3 {
+    background-color: darkcyan;
+    color: green;
+}
+
+#t4 {
+    background-color: salmon;
+    color: cyan;
+}
+
+#t5 {
+    background-color: brown;
+    color: lightgray;
+}

@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../10_21/style.css">
     <title>Document</title>
+    <style>
+        .contA {
+            border:1 ;
+            border-color: black;
+            border-style: solid;
+            box-sizing: content-box;
+            width: 100px;
+            height: 100px;
+        }
+
+        .contB {
+            border:1 ;
+            border-color: black;
+            border-style: solid;
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -33,6 +52,8 @@
     <p id="teste">Teste</P><br><br>
     <p>Teste</P><br><br>
     <button class="botao">Botão</button><br><br>
+    <nav class="contA"></nav>
+    <nav class="contB"></nav>
     <footer>
         <a href="link">Link 1</a>|
         <a href="link">Link 2</a>|
