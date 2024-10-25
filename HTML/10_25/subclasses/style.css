@@ -1,0 +1,38 @@
+nav{
+    background-color: blue;
+    height: 100px;
+}
+
+nav:hover{
+    background-color: red;
+    height: 100px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 10px;
+    row-gap: 10px; /*GAP = espaçamento*/
+    background-color: chocolate;
+    
+}
+
+.grid-item {
+    background-color: white;
+    border: 1px;
+    border-color: red;
+    border-style: solid;
+    color: black;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.grid-item1 {
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+
+.item8 {
+    grid-area: 2 / 2 / 4 / 4;
+}
