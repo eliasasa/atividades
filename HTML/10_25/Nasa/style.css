@@ -101,7 +101,7 @@ h2 {
     text-align: center;
 }
 
-.cent h2 {
+.cent>h2 {
     text-align: left;
     margin-left: 10%;
 }
@@ -168,7 +168,7 @@ h2 {
 .overlay {
     position: absolute; 
     bottom: 20px; 
-    left: -14px; 
+    left: 10px; 
     color: white;
     font-size: 22px;
     text-align: left;
@@ -194,7 +194,7 @@ h2 {
     cursor: pointer;
 }
 
-.bigimg .overlay {
+.bigimg > .overlay {
     font-size: 42px;
 }
 
@@ -229,7 +229,7 @@ h2 {
 .nyan .overlay {
     position: absolute; 
     top: 10%;
-    left: -10px;
+    left: 100px;
     font-size: 150px;
     padding: 0;
     color: white;
@@ -239,7 +239,7 @@ h2 {
 #subt {
     position: absolute;
     top: 40%;
-    left: -10px;
+    left: 100px;
     font-size: 40px;
     color: white;
     text-align: left;
@@ -255,8 +255,7 @@ h2 {
     margin: auto;
     max-width: 70%;
     padding: 2%;
-    margin-bottom: 15%;
-    margin-top: 15%;
+    margin-bottom: 20%;
 }
 
 .ctgrid .medimg {
@@ -279,32 +278,64 @@ h2 {
 
 .cabe {
     display: grid;
+    grid-template-columns: 1fr;
     background-color: black;
     max-width: 100%;
     height: auto;
-    padding: 50px 200PX;
+    padding: 10px;
     text-align: center;
     color: white;
     margin-top: 100px;
     position: relative;
     bottom: 0;
-    grid-template-columns: repeat(4, auto);
     align-items: center;
     justify-items: center;
     gap: 5px;
+    box-sizing: border-box;
 }
 
-.cabe h2 {
+.cabegrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0%;
+    margin: 0 auto; 
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    width: 30%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.cabegrid h2 {
     color: white;
+    padding-left: 0%;
+    padding-right: 0%;
     font-size: medium;
     margin: 0; 
     text-align: center;
+    width: auto;
+    box-sizing: border-box;
 }
 
 .c1, .c2, .c3, .c4 {
-    grid-row-start: 1; 
+    box-sizing: border-box;
+    width: auto;
     margin: 0; 
     padding: 0; 
+    
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
+.headertext a {
+    color: white; 
+    text-decoration: none;
+}
+
+.headertext a:hover {
+    color: gray;
+}
