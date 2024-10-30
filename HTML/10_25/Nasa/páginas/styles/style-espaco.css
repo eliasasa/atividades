@@ -244,30 +244,59 @@ hr {
     box-sizing: border-box;
 }
 
+.cabe {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: black;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin: 0%;
+    text-align: center;
+    color: white;
+    position: relative;
+    bottom: 0;
+    align-items: center;
+    justify-items: center;
+    gap: 5px;
+    box-sizing: border-box;
+}
+
 .cabegrid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 0%;
     margin: 0 auto; 
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     align-content: center;
-    text-align: center;
-    width: 30%;
+    text-align: left;
+    width: 80%;
     height: auto;
     box-sizing: border-box;
 }
 
 .cabegrid h2 {
     color: white;
-    padding-left: 0%;
-    padding-right: 0%;
-    font-size: medium;
-    margin-top: 50px; 
-    text-align: center;
+    padding: 0%;
+    font-size: 22px;
+    margin: 0; 
+    text-align: left;
     width: auto;
-    height: 50px;
     box-sizing: border-box;
+}
+
+.cabett {
+    font-family: sans-serif;
+    color: #b9b9bb;
+    font-weight: lighter;
+}
+
+.cabetxt {
+    grid-row-start: 3;
+    color: white;
+    font-family: sans-serif;
+    font-weight: lighter;
 }
 
 .c1, .c2, .c3, .c4 {
@@ -276,4 +305,18 @@ hr {
     margin: 0; 
     padding: 0; 
     
+}
+
+.c2, .c3, .c4 {
+    text-align: right;
+}
+
+.c1 img {
+    width: 64px;
+    height: auto;
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
 }
