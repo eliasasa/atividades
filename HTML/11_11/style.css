@@ -1,0 +1,46 @@
+body {
+    margin: 0%;
+    padding: 0%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    background-color: lightblue;
+}
+
+a {
+    display: block;
+    color: white;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: gray;
+    border-radius: 5%;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    list-style: none;
+    min-width: 160px;
+    z-index: 1;
+}
+
+@media (min-width: 768px) and (max-width:1900px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 10px;
+        background-color: #2196f3;
+        padding: 10px;
+    }
+
+    .grid-container > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+    }
+}
