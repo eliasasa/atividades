@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js</title>
+</head>
+<body>
+    <script type="text/javascript" src="../11_22/js.js">
+    </script>
+    <br>
+    <button onclick="window.print()">Printa a pag :D</button>
+
+    <div id="a" onclick="a()">Clicar</div>
+    <script type="text/javascript">
+
+        function a() {
+            var elemento = window.document.getElementById('a')
+            elemento.innerText = 'Certa resposta';
+            elemento.style.backgroundColor = 'green';
+        }
+        
+    </script>
+
+</body>
+</html>

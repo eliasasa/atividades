@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+    <script src="../atv/atividade.js" defer></script>
+</head>
+<body>
+    <h2>Fahrenheit para Celso</h2>
+    <form id="formConversao">
+        <label for="fare">Fahrenheit:</label>
+        <input type="text" id="fare" required>
+        <button type="submit">Converter</button>
+    </form>
+    <br>
+    <form id="produto" style="display: grid; grid-template-columns: auto; margin: 0 700px;">
+        <h2 style="justify-self: center;">Venda produto</h2>
+        <label for="nomeproduto">Nome:</label>
+        <input type="text" id="nomeproduto" required>
+        <br>
+        <br>
+        <label for="quanproduto">Quantidade comprada:</label>
+        <input type="number" id="quanproduto" required>
+        <br>
+        <br>
+        <label for="unprod">Valor unitário:</label>
+        <input type="number" id="unprod" required>
+        <br>
+        <br>
+        <label for="porcdesc">Desconto:</label>
+        <input type="number" id="porcdesc" required max="100">
+        <br>
+        <br>
+        <button type="submit">Ver valor total</button>
+    </form>
+    <form id="dolar" style="display: grid; grid-template-columns: auto; margin: 0 700px;">
+        <h2 style="justify-self: center;">Reais para dólar</h2>
+        <label for="real">R$:</label>
+        <input type="number" id="real">
+        <br>
+        <br>
+        <label for="cota">Cotação dólar:</label>
+        <input type="text" id="cota">
+        <br>
+        <br>
+        <button type="submit">Ver cotação</button>
+    </form>
+</body>
+</html>
