@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .span-required {
+            display: none;
+            font-size: 15px;
+            color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="Digite seu nome" class="required" oninput="nameValidate()">
+        <span class="span-required">O nome deve ter 3 caracteres</span>
+    </div>
+    <br>
+    <form>
+        <input type="password" required class="pass" oninput="passValidate()" id="pass1">
+        <br>
+        <input type="password" required class="pass" oninput="passValidate()" id="pass2">
+        <span class="span-required">Senhas não coincidem ou menor que 8</span>
+    </form>
+    <script type="text/javascript" async>
+        const input = document.querySelectorAll('.required');
+        const spans = document.querySelectorAll('.span-required');
+        
+        function nameValidate() {
+            if (input[0].value.length < 3) { 
+                setError(0);
+            } else {
+                removeError(0);
+            }
+        }
+
+        const senhas = document.querySelectorAll('.pass');
+        const span = document.querySelectorAll('.span-required');
+
+        function passValidate() {
+            if (senhas[0].value.length >= 8 && senhas[0].value == senhas[1].value) {
+                removeError(1)
+            } else {
+                setError(1)
+            }
+            
+        }
+    
+        function setError(index) {
+            spans[index].style.display = 'block';
+        }
+    
+        function removeError(index) {
+            spans[index].style.display = 'none';
+
+        }
+        </script>
+
+    
+</body>
+</html>
