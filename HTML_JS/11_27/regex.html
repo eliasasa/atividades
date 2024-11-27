@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <style>
+        .span-required {
+            display: none;
+            color: red;
+        }
+    </style>
+ 
+</head>
+<body>
+    <!-- <script type="text/javascript" src="teste.js"></script>
+    <h1>Olha a Conta :D</h1>
+ 
+    <script>
+        document.write(5+6)
+        document.write(Date())
+    </script>
+    <br>
+    <button onclick="window.print()">Printa a pag :D</button>
+    <br>
+    <script type="text/javascript" src="teste.js">
+        document.write(resultado)
+    </script> -->
+<!--
+    <p>Parágrafo 1</p>
+    <p>Parágrafo 2</p>
+    <p>Parágrafo 3</p>
+ 
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[0]
+        p1.style.background="green"
+ 
+        var p1 = window.document.getElementsByTagName('p')[1]
+        p1.innerHTML="blue"
+    </script> -->
+    <input type="email" oninput="validar()" id="inEmail">
+    <span class="span-required">Email não segue o padrão "nome@dominio.com"</span>
+
+    <script>
+        // document.write(/[az]/i.test("AZ"));
+        // document.write(/love/i.test("LovE"));
+        // document.write(/[\bx]/i.test("123x"));
+        // document.write(/\s/i.test(" w"));
+ 
+        // document.write(/^\d{2}\/\d{2}\/\d{4}$/.test('07/05/2008'))
+ 
+        // var dia = /^(0[1-9]|1[0-9]|2[0-9]|3[0-1])$/;
+        // document.write(dia.test("29"))
+ 
+        // var mes = /^(0[1-9]|1[0-2])$/;
+        // document.write(mes.test("12"))
+ 
+        // var ano = /^\d{4}$/;
+        // document.write(ano.test("2024"))
+ 
+        // var data = /^(0[1-9]|1[0-9]|2[0-9]|3[0-1])\/((0[1-9]|1[0-2]))\/(\d{4})$/;
+        // document.write(data.test("07/05/2008"))
+
+        // const cpf = /^[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}$/
+
+        // document.write(cpf.test('390.337.798-89'))
+        // document.write(cpf.test('39033779889'))
+
+        // nome = [a-zA-Z0-9._%+-]+
+        // dominio = [a-zA-Z0-9.-]+
+        // .com = [a-zA-Z]{2,}
+        const email = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z.]{2,}$/
+
+        // document.write(email.test('elias@hotmail.com'))
+        // document.write(email.test('e@e.x'))
+        function validar() {
+            const nEmail = document.getElementById('inEmail').value;
+            const span = document.querySelector('.span-required');
+
+            if (email.test(nEmail)) {
+                span.style.display = 'none';
+            } else {
+                span.style.display = 'block';
+            }
+        }
+    </script> 
+</body>
+</html>
+ 

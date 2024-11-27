@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .span-required {
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div style="justify-self: center;">
+        <input class="required" oninput="validar1()" maxlength="15">
+        <span class="span-required">Não segue o padrão XXXXXXX-XX.XXXX</span>
+        <br>
+        <br>
+        <input class="required" oninput="validar2()">
+        <span class="span-required">Não segue o padrão XXXX</span>
+    </div>
+    
+
+    <script>
+        const inputs = document.querySelectorAll('.required');
+        const spans = document.querySelectorAll('.span-required');
+        const padrao1 = /^[\d]{7}-[\d]{2}.[\d]{4}$/
+        const padrao2 = /^[\d]{4}$/
+
+        function setError(index) {
+            spans[index].style.display = 'block'
+        }
+
+        function removeError(index) {
+            spans[index].style.display = 'none'
+        }
+
+        function validar1() {
+            if (padrao1.test(inputs[0].value)) {
+                removeError(0)
+            } else {
+                setError(0)
+            }
+        }
+
+        function validar2() {
+            if (padrao2.test(inputs[1].value)) {
+                removeError(1)
+            } else {
+                setError(1)
+            }
+        }
+    </script>
+</body>
+</html>
