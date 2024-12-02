@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Dados</title>
+</head>
+<body>
+    <form method="post" action="./action.php">
+        <p><strong>Dados Pessoais</strong></p>
+
+        <fieldset id="pessoal">
+            <legend>Nome</legend>
+            <label for="nome">Digite seu nome:</label>
+            <input type="text" name="nome" id="nome" size="20" maxlength="20" placeholder="Ex.: João" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Gênero</legend>
+            <input type="radio" name="genero" id="masculino" value="Masculino" required>
+            <label for="masculino">Masculino</label>
+            <br>
+            <input type="radio" name="genero" id="feminino" value="Feminino">
+            <label for="feminino">Feminino</label>
+            <br>
+            <input type="radio" name="genero" id="outro" value="Outro">
+            <label for="outro">Outro</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Linguagem preferida</legend>
+            <input type="checkbox" name="ling[]" id="js" value="JavaScript" checked>
+            <label for="js">JavaScript</label>
+            <br>
+            <input type="checkbox" name="ling[]" id="py" value="Python">
+            <label for="py">Python</label>
+            <br>
+            <input type="checkbox" name="ling[]" id="html" value="HTML">
+            <label for="html">HTML</label>
+            <br>
+            <input type="checkbox" name="ling[]" id="php" value="PHP">
+            <label for="php">PHP</label>
+        </fieldset>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
