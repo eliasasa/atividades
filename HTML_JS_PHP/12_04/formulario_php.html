@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="./formulario.php">
+        <fieldset>
+            <legend>Text</legend>
+            <label for="nome">Digite seu nome:</label><br>
+            <input type="text" name="nome" id="nome" size="20" maxlength="20" placeholder="Ex.: João" required>
+            <br>
+            <br>
+            <label for="rg">RG:</label><br>
+            <input type="text" name="rg" id="rg" size="20" required>
+            <br>
+            <br>
+            <label for="cpf">CPF:</label><br>
+            <input type="text" name="cpf" id="cpf" size="14" required>
+            <br>
+            <br>
+            <label for="end">Endereço:</label><br>
+            <input type="text" name="end" id="end" required>
+        </fieldset>
+        <fieldset>
+            <legend>Number</legend>
+            <label for="idade">Idade:</label><br>
+            <input type="number" name="idade" id="idade" required>
+        </fieldset>
+        <fieldset>
+            <legend>Checkbox</legend>
+            <input type="checkbox" name="epoca_ano[]" id="primavera" value="primavera" checked>
+            <label for="primavera">Primavera</label>
+            <br>
+            <input type="checkbox" name="epoca_ano[]" id="verao" value="verao">
+            <label for="verao">Verão</label>
+            <br>
+            <input type="checkbox" name="epoca_ano[]" id="outono" value="outono">
+            <label for="outono">Outono</label>
+            <br>
+            <input type="checkbox" name="epoca_ano[]" id="inverno" value="inverno">
+            <label for="inverno">Inverno</label>
+        </fieldset>
+        <fieldset>
+            <legend>Radio</legend>
+            <input type="radio" name="genero" id="masculino" value="Masculino" required>
+            <label for="masculino">Masculino</label>
+            <br>
+            <input type="radio" name="genero" id="feminino" value="Feminino">
+            <label for="feminino">Feminino</label>
+            <br>
+            <input type="radio" name="genero" id="outro" value="Outro">
+            <label for="outro">Outro</label>
+        </fieldset>
+        <fieldset>
+            <legend>Color</legend>
+            <label for="cor">Cor favorita:</label><br>
+            <input type="color" name="cor" required>
+        </fieldset>
+        <fieldset>
+            <legend>+5 Perguntas</legend>
+            <label for="cartao">Número de trás do cartão de crédito</label><br>
+            <input type="number" name="cartao" id="cartao" required>
+            <br>
+            <p>Botão favorito:</p>
+            <input type="radio" name="botao_fav" id="botao1" value="botao1" required>
+            <label for="botao1">Botão 1</label>
+            <br>
+            <input type="radio" name="botao_fav" id="botao2" value="botao2">
+            <label for="botao2">Botão 2</label>
+            <br>
+            <input type="radio" name="botao_fav" id="botao3" value="botao3">
+            <label for="botao3">Botão 3</label>
+            <br>
+            <p>Pokémon(s) favorito(s):</p>
+            <input type="checkbox" name="pokemon[]" id="mewtwo" value="mewtwo" checked>
+            <label for="mewtwo">Mewtwo</label>
+            <br>
+            <input type="checkbox" name="pokemon[]" id="charmander" value="charmander">
+            <label for="charmander">Charmander</label>
+            <br>
+            <input type="checkbox" name="pokemon[]" id="bulbassauro" value="bulbassauro">
+            <label for="bulbassauro">Bulbassauro</label>
+            <br>
+            <input type="checkbox" name="pokemon[]" id="squirtle" value="squirtle">
+            <label for="squirtle">Squirtle</label>
+            <br>
+            <p>Power Ranger favorito:</p>
+            <input type="color" required name="ranger">
+            <p>Dia aleatório(a partir de 2025):</p>
+            <input type="date" required name="data" min="2025-01-01">
+        </fieldset>
+        <input type="submit" value="Enviar"></button>
+    </form>
+</body>
+</html>
