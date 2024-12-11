@@ -1,5 +1,9 @@
 <?php 
-include("verificacao.php");
+        include("verificacao.php");
+        if($_SESSION["setor"]!="comum"){
+            header("location:index.html");
+            exit();
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">

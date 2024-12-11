@@ -1,5 +1,9 @@
 <?php 
         include("verificacao.php");
+        if($_SESSION["setor"]!="adm"){
+            header("location:index.html");
+            exit();
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
