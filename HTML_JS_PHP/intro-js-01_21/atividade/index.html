@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formulario" style="justify-self: center;">
+        <fieldset>
+            <legend>Envie dados</legend>
+            <input id="dado" placeholder="Digite algo">
+            <button type="submit">Enviar dados</button>
+        </fieldset>
+    </form>
+    <script>
+        function dados(event) {
+            event.preventDefault();
+            let dado = document.getElementById("dado").value;
+
+            try {
+                dado = parseInt(dado)
+                return typeof(dado)
+            } catch {
+                return typeof(dado)
+            };
+
+            window.alert(`O tipo de dado é: ${dado}`);
+        }
+
+        document.getElementById("formulario").addEventListener("submit", dados);
+    </script>
+</body>
+</html>

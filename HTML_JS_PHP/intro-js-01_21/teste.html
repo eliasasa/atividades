@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+        }
+ 
+        h3{
+            display: inline;
+        }
+ 
+        .accordion{
+            background-color: blueviolet;
+            padding: 20px 40px;
+            border: solid 5px #d5afe4
+        }
+        .accordion button{
+            background: none;
+            color: white;
+            border-style: solid;
+            border-color: #d5afe4;
+            box-shadow: none;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .accordion div.ativo{
+            height: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+ 
+    <div class="accordion">
+        <button><b>O que é Javascript</b></button>
+        <div class="ativo">
+            <h3>é uma linguagem de programação executada pelos navegadores :D</h3>
+        </div>
+    </div>
+ 
+    <script>
+ 
+        let button = document.querySelector("button");
+        let div = document.querySelector(".accordion div");
+ 
+        button.addEventListener("click", function(){
+            if(div.classList.contains("ativo")){
+                div.classList.remove("ativo");
+            } else{
+                div.classList.add("ativo");
+            }
+        });
+ 
+    </script>
+</body>
+</html>
+ 
