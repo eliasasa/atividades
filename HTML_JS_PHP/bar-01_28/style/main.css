@@ -1,0 +1,119 @@
+@import url(./root.css);
+
+#menu-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333; 
+    color: white; 
+    width: 100%; /* Use 100% para garantir que o cabeçalho ocupe a largura total da tela */
+    align-items: center;
+    height: 64px;
+    padding: 0 16px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    position: relative; 
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+}
+
+#menu-header > div {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#menu-header > div > img {
+    width: 64px;
+    height: 64px;
+    margin-right: 24px;
+}
+
+#menu-header > nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#menu-header > nav > ul {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+    height: 100%;
+    align-items: center;
+}
+
+.item-menu {
+    list-style: none;
+    height: 100%;
+}
+
+.item-menu > a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 16px;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.item-menu > a:hover {
+    background-color: #555; 
+    color: #ffdd57; 
+    border-radius: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media(max-width: 768px) {
+    #menu-header {
+        grid-template-columns: auto 1fr auto;
+        display: grid;
+        align-items: center;
+        padding: 8px 16px;
+        height: auto;
+    }
+
+    #menu-toggle {
+        display: block;
+        grid-column: 3; /* Move o botão para o lado direito */
+    }
+
+    #nav-menu {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        visibility: hidden; 
+        display: none;
+    }
+
+    #nav-menu.visible {
+        visibility: visible;
+        display: block;
+    }
+
+    #menu-header > nav > ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .item-menu {
+        width: 100%;
+    }
+
+    .item-menu > a {
+        justify-content: center;
+        width: 100%;
+    }
+}
