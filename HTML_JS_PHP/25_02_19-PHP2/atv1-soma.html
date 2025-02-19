@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Soma</legend>
+        <form action="./php/variaveis.php" method="get">
+            <div>
+                <label for="num1">Número 1</label>
+                <input type="text" id="num1" name="num1" required>
+            </div>
+            <br>
+            <div>
+                <label for="num2">Número 2</label>
+                <input type="text" id="num2" name="num2" required>
+            </div>
+            <button type="submit">Resultados</button>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>Condicional - Idade</legend>
+        <form action="./php/idade.php" method="get">
+            <div>
+                <label for="idade">Idade</label>
+                <input type="number" id="idade" name="idade" required>
+            </div>
+            <button type="submit">Verificar</button>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>Laço de repetição</legend>
+        <form action="./php/repeticao.php" method="get">
+            <button type="submit">Iniciar repetição</button>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>Função</legend>
+        <form action="./php/funcao.php" method="get">
+            <label for="comprimento">Comprimento</label>
+            <input type="text" name="comprimento" required>
+            <br>
+            <label for="largura">Largura</label>
+            <input type="text" name="largura">
+            <button type="submit">Calcular Área</button>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>Fibonacci</legend>
+        <form action="./php/fibonacci.php" method="get">
+            <button type="submit">Gerar</button>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>Sem vogais</legend>
+        <form method="get" accept="./php/vogais.php">
+            <label for="texto">Insira aqui seu texto:</label>
+            <textarea name="texto"></textarea>
+            <button type="submit">Remover vogais</button>
+        </form>
+    </fieldset>
+</body>
+</html>
