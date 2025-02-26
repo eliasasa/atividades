@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a8a5e6;
+            --background: #0f0e17;
+            --surface: #2e2d3d;
+            --text: #fffffe;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        p {
+            color: var(--text);
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, var(--background), #1a1a2e);
+            padding: 2rem;
+        }
+
+        .container {
+            background: rgba(15, 14, 23, 0.9);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 800px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        h1 {
+            color: var(--text);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            background: var(--surface);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+        }
+
+        input::placeholder {
+            color: #6b6a7a;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+        }
+
+        button {
+            background: linear-gradient(135deg, var(--primary), #8a78f0);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 1.5rem;
+            }
+
+            form {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+
+        /* Efeito de brilho nos inputs */
+        .form-group:not(.checkbox-group)::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .form-group:focus-within::after {
+            transform: scaleX(1);
+        }
+
+        .termo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px
+        }
+
+        /* Estilização personalizada para o select */
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236c5ce7'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Cadastro</h1>
+        <form action="" method="post">
+            <div>
+                <label for="nomeUser">Nome</label>
+                <input type="text" id="nomeUser" name="nomeUser" required>
+            </div>
+            <div>
+                <label for="dataNasUser">Data de Nascimento</label>
+                <input type="date" id="dataNasUser" name="dataNasUser" required>
+            </div>
+            <div>
+                <label for="sexUser">Sexo</label>
+                <select name="sexUser" id="sexUser" required>
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                </select>
+            </div>
+            <div>
+                <label for="cpfUser">CPF</label>
+                <input type="text" id="cpfUser" name="cpfUser" required>
+            </div>
+            <div>
+                <label for="rgUser">RG</label>
+                <input type="text" id="rgUser" name="rgUser" required>
+            </div>
+            <div>
+                <label for="idadeUser">Idade</label>
+                <input type="text" id="idadeUser" name="idadeUser" required>
+            </div>
+            <div>
+                <label for="enderecoUser">Endereço</label>
+                <input type="text" id="enderecoUser" name="enderecoUser" required>
+            </div>
+            <div>
+                <label for="cidadeUser">Cidade</label>
+                <input type="text" id="cidadeUser" name="cidadeUser" required>
+            </div>
+            <div>
+                <label for="estadoUser">Estado</label>
+                <input type="text" id="estadoUser" name="estadoUser" required>
+            </div>
+            <div>
+                <label for="celUser">Celular</label>
+                <input type="text" id="celUser" name="celUser" required>
+            </div>
+            <div>
+                <label for="emailUser">E-Mail</label>
+                <input type="email" id="emailUser" name="emailUser" required>
+            </div>
+            <div>
+                <label for="senhaUser">Senha</label>
+                <input type="password" id="senhaUser" name="senhaUser" required>
+            </div>
+            <div class="termo">
+                <input type="checkbox" id="termo" name="termo" required>
+                <p for="termo">Li e aceito os termos</p>
+            </div>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</body>
+</html>
