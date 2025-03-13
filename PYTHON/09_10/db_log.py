@@ -40,7 +40,6 @@ sen1e.pack(anchor = 'w', padx=10)
 # sen2e.pack(anchor = 'w', padx=10)
 
 configDB = {
-    'host':'10.28.2.62',
     'user':'suporte',
     'password':'suporte',
     'database':'logdesk'
