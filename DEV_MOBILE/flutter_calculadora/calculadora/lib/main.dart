@@ -1,7 +1,10 @@
+import 'package:calculadora/pages/bicicleta.dart';
 import 'package:flutter/material.dart';
 import 'package:calculadora/pages/calculadora.dart';
 import 'package:calculadora/pages/conversora.dart';
 import 'package:calculadora/pages/taxi.dart';
+import 'package:calculadora/pages/banco.dart';
+
 
 void main() => runApp(const MyApp());
 
@@ -18,6 +21,9 @@ class MyApp extends StatelessWidget {
         '/pages/calculadora': (context) => Calculadora(),
         '/pages/conversora': (context) => Conversora(),
         '/pages/taxi': (context) => Taxi(),
+        '/pages/banco': (context) => Banco(),
+        '/pages/bicicleta': (context) => Bicicleta(),
+
       },
     );
   }
@@ -63,6 +69,13 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             ListTile(
+              leading: Icon(Icons.monetization_on),
+              title: Text('Poupança'),
+              onTap: () {
+                Navigator.pushNamed(context, '/pages/banco');
+              },
+            ),
+            ListTile(
               leading: Icon(Icons.local_taxi),
               title: Text('Taxi'),
               onTap: () {
@@ -73,7 +86,7 @@ class HomeScreen extends StatelessWidget {
               leading: Icon(Icons.directions_bike_sharp),
               title: Text('Bicicletas'),
               onTap: () {
-                Navigator.pushNamed(context, '/pages/taxi');
+                Navigator.pushNamed(context, '/pages/bicicleta');
               },
             ),
           ],

@@ -8,25 +8,44 @@ class Conversora extends StatefulWidget {
 }
 
 class _ConversoraState extends State<Conversora> {
-  final TextEditingController _controller1 = TextEditingController();
+  final TextEditingController _controllerNumEmpregados = TextEditingController();
+  final TextEditingController _controllerCustoBicicleta = TextEditingController();
+  final TextEditingController _controllerNumBicicletasVendidas = TextEditingController();
   String _resultadoConv = '';
 
+  final double salarioMinimo = 1500;
+  final double acrescimoBicicleta = 0.50;
+  final double comissao = 0.15;
 
-  void _metrosCm() {
-    final _metros = double.tryParse(_controller1.text);
+  void _converter() {
+    final double? numEmpregados = double.tryParse(_controllerNumEmpregados.text);
+    final double? custoBicicleta = double.tryParse(_controllerCustoBicicleta.text);
+    final double? numBicicletasVendidas = double.tryParse(_controllerNumBicicletasVendidas.text);
 
-    if (_metros != null) {
+    if (numEmpregados != null &&
+        custoBicicleta != null &&
+        numBicicletasVendidas != null) {
+      final double salarioComissao = salarioMinimo + (salarioMinimo * comissao);
+      final double salarioFinalEmpregado = salarioComissao * numEmpregados;
+      final double precoBicicletaVenda = custoBicicleta + (custoBicicleta * acrescimoBicicleta);
+      final double receitaLoja = precoBicicletaVenda * numBicicletasVendidas;
+      final double custoTotalBicicletas = custoBicicleta * numBicicletasVendidas;
+      final double lucroLoja = receitaLoja - custoTotalBicicletas - salarioFinalEmpregado;
+
       setState(() {
-        _resultadoConv = (_metros * 1000).toString() + ' cm';
+        _resultadoConv = '''
+Salário Final por Empregado: R\$ ${salarioFinalEmpregado.toStringAsFixed(2)}
+Receita da Loja: R\$ ${receitaLoja.toStringAsFixed(2)}
+Lucro Final da Loja: R\$ ${lucroLoja.toStringAsFixed(2)}
+        ''';
       });
     } else {
       setState(() {
-        _resultadoConv = 'Valor Inválido.';
+        _resultadoConv = 'Por favor, insira valores válidos para todos os campos.';
       });
     }
-
-    
   }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,32 +55,44 @@ class _ConversoraState extends State<Conversora> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Conversora'),
+          title: const Text('Conversora'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
             children: [
               TextField(
-                controller: _controller1,
-                decoration: InputDecoration(
-                  labelText: 'Valor em metros:'
+                controller: _controllerNumEmpregados,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  labelText: 'Número de Empregados:',
                 ),
               ),
-              SizedBox(
-                height: 32,
-              ),
-              FilledButton(onPressed: _metrosCm, child: Text('Converter')),
               TextField(
-                decoration: InputDecoration(
-                  labelText: 'Resultado da Conversão em centímetros'
+                controller: _controllerCustoBicicleta,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  labelText: 'Custo da Bicicleta:',
                 ),
-                readOnly: true,
-                controller: TextEditingController(text: _resultadoConv),
+              ),
+              TextField(
+                controller: _controllerNumBicicletasVendidas,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  labelText: 'Número de Bicicletas Vendidas:',
+                ),
+              ),
+              const SizedBox(height: 32),
+              FilledButton(onPressed: _converter, child: const Text('Calcular')),
+              const SizedBox(height: 16),
+              Text(
+                _resultadoConv,
+                style: const TextStyle(fontSize: 16),
+                textAlign: TextAlign.left,
               ),
             ],
           ),
-          ),
+        ),
       ),
     );
   }
